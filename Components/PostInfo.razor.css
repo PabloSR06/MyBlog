@@ -1,14 +1,17 @@
 ﻿.post-info {
+    
 }
 .post-title{
 
 }
-.post-date{
-
+.post-date {
+    font-size: 0.8em;
+    color: #888;
 }
 .post-content{
     
 }
 .post {
-    display: flex;
+    width: 800px;
+    margin: 0 auto;
 }

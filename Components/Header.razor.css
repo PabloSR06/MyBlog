@@ -1,0 +1,22 @@
+﻿.header-container{
+    margin-top:14px
+}
+.header-socials {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+}
+
+.header-icon-social {
+
+}
+.header-link-social {
+    height: 25px;
+    width: 25px;
+    
+}

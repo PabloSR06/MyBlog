@@ -1,45 +1,4 @@
-﻿* {
-    font-family: 'Segoe UI Historic', sans-serif;
-}
-
-.link-social {
-}
-
-.main-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.icon-social {
-    display: block;
-    width: 20px;
-    height: 20px;
-}
-
-.socials {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(3, auto);
-    grid-gap: 22px;
-}
-
-.main-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 2px solid black;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 20px;
-}
-
+﻿
 .sectionBlock {
     min-height: 100vh;
     width: 100%;
@@ -103,4 +62,6 @@
 }
 
 .secondBlock {
+    width: 800px;
+    margin: 0 auto;
 }

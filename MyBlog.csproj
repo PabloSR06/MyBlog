@@ -5,17 +5,24 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+    <UserSecretsId>1e1ac4be-3a6b-4db5-aac6-ba4775b41ced</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Components\Header.razor.css" />
+    <None Remove="Components\Portrait.razor.css" />
     <None Remove="Pages\Index.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Components\Header.razor.css" />
+    <Content Include="Components\Portrait.razor.css" />
     <Content Include="Pages\Index.razor.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.31.0" />
+    <PackageReference Include="Markdown" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.11" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

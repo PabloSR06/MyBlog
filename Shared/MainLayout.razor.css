@@ -1,3 +1,6 @@
+* {
+    font-family: 'Segoe UI Historic', sans-serif;
+}
 .page {
     position: relative;
     display: flex;
