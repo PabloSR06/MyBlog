@@ -1,0 +1,31 @@
+﻿@using Models;
+@inject HttpClient? HttpClient;
+
+
+<div class="post">
+    <div class="post-info">
+        <h2 class="post-title">@postInfo.Title</h2>
+        <p class="post-date">@postInfo.Date</p>
+    </div>
+    <div>
+        <p class="post-content">@file</p>
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public string Path { get; set; }
+
+    private string file = "";
+
+    private Post postInfo = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        file =  await HttpClient.GetStringAsync($"/files/posts/{Path}.md") ?? "Error";
+        var posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json");
+        postInfo = posts.Where(x => x.fileName == Path).FirstOrDefault();
+
+    }
+}

@@ -1,0 +1,45 @@
+﻿@using Models;
+@inject HttpClient? HttpClient;
+@inject NavigationManager? NavigationManager;
+
+@if (isLoaded)
+{
+    @foreach (var post in Posts)
+    {
+        <div>
+            <h2>@post.Title</h2>
+            <button class="btn btn-primary" onclick="@(() => goToPost(post.fileName))">Click me</button>
+            <p>@post.Date</p>
+        </div>
+    }
+
+}
+else
+{
+    <p>Cargando</p>
+}
+
+
+
+
+@code {
+
+    private List<Post> Posts = new();
+
+    public bool isLoaded { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new();
+        Posts?.Reverse();
+        isLoaded = true;
+        StateHasChanged();
+    }
+
+    private void goToPost(string fileName)
+    {
+        var x = "";
+
+        NavigationManager.NavigateTo(fileName);
+    }
+}

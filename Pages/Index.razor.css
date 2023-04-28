@@ -1,0 +1,106 @@
+﻿* {
+    font-family: 'Segoe UI Historic', sans-serif;
+}
+
+.link-social {
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.icon-social {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.socials {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 22px;
+}
+
+.main-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.sectionBlock {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-down {
+    height: 50px;
+    width: 30px;
+    border: 2px solid black;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+    .scroll-down::before,
+    .scroll-down::after {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        height: 10px;
+        width: 10px;
+        transform: translate(-50%, -100%) rotate(45deg);
+        border: 2px solid black;
+        border-top: transparent;
+        border-left: transparent;
+        animation: scroll-down 1s ease-in-out infinite;
+    }
+
+    .scroll-down::before {
+        top: 30%;
+        animation-delay: 0.3s;
+    }
+
+@keyframes scroll-down {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 90%;
+        opacity: 0;
+    }
+}
+
+
+.firstBlock {
+}
+
+.secondBlock {
+}
