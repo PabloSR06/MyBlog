@@ -4,15 +4,23 @@
 
 @if (isLoaded)
 {
-    @foreach (var post in Posts)
-    {
-        <div>
-            <h2>@post.Title</h2>
-            <button class="btn btn-primary" onclick="@(() => goToPost(post.fileName))">Click me</button>
-            <p>@post.Date</p>
-        </div>
-    }
-
+    <div class="blogGrid">
+        @foreach (var post in Posts)
+        {
+            <div class="blogList-container" onclick="@(() => goToPost(post.fileName))">
+                <h2 class="blogList-title">@post.Title</h2>
+                <div class="blogList-info">
+                    <div class="tag-list">
+                        @foreach (var tag in post.tags)
+                        {
+                            <p class="tag">@tag</p>
+                        }
+                    </div>
+                    <p class="blogList-date">@post.Date</p>
+                </div>
+            </div>
+        }
+    </div>
 }
 else
 {
