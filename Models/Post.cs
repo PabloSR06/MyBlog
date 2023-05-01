@@ -10,6 +10,8 @@ namespace MyBlog.Models
         public string? fileName { get; set; }
         [JsonProperty("date")]
         public string? Date { get; set; }
+        [JsonProperty("tags")]
+        public List<string>? tags { get; set; }
 
     }
 }
