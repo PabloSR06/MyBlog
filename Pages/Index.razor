@@ -1,6 +1,7 @@
 ﻿@page "/{*path}"
 @inject NavigationManager? NavigationManager
 
+<PageTitle>Pablo Suarez Romero</PageTitle>
 
 @if (string.IsNullOrEmpty(this.Path))
 {
@@ -17,7 +18,7 @@
     </div>
 
     <div class="sectionBlock secondBlock" id="blog">
-        <div class="container">
+        <div class="">
 
 
             <MyBlog.Components.PostList></MyBlog.Components.PostList>

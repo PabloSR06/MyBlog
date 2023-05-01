@@ -1,3 +1,4 @@
+When you call an api using retrofit using .execute() in Android it will throw an error **'android.os.NetworkOnMainThreadException'**.
 
 To fix this problem you can one of two things and of course you have to add in the android manifest.xml file.
 ```xml
