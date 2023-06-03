@@ -2,6 +2,12 @@
 @inject NavigationManager? NavigationManager
 
 <PageTitle>Pablo Suarez Romero</PageTitle>
+<HeadContent>
+    <meta property="og:title" content="Pablo Suarez Romero">
+    <meta property="og:description" content="Small blog">
+    <meta name="twitter:title" content="Pablo Suarez Romero" />
+    <meta name="twitter:description" content="Small blog" />
+</HeadContent>
 
 @if (string.IsNullOrEmpty(this.Path))
 {
@@ -10,8 +16,8 @@
 
             <MyBlog.Components.Portrait></MyBlog.Components.Portrait>
 
-            
-            <a href="#blog">
+
+            <a href="#blog" aria-label="go to blog">
                 <div class="scroll-down"></div>
             </a>
         </div>

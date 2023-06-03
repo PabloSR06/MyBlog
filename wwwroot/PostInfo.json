@@ -3,30 +3,35 @@
     "title": "Retrofit Android",
     "fileName": "retrofitAndroid",
     "date": "MAR 02, 2022",
-    "tags": ["Java", "Android"]
+    "tags": [ "Java", "Android" ],
+    "description": ""
   },
   {
     "title": "How to prepare a Java development environment on Windows",
     "fileName": "javaEnviroment",
     "date": "MAR 16, 2022",
-    "tags": ["Java", "Android", "Windows"]
+    "tags": [ "Java", "Android", "Windows" ],
+    "description": ""
   },
   {
     "title": "AZURE AD Obtaining OAuth Token",
     "fileName": "azureADOAuth",
     "date": "APR 30, 2022",
-    "tags": ["C#", "AzureAD"] 
+    "tags": [ "C#", "AzureAD" ],
+    "description": ""
   },
   {
     "title": "How to write descent commits",
     "fileName": "writecommits",
     "date": "JUN 03, 2022",
-    "tags": ["Git"]
+    "tags": [ "Git" ],
+    "description": ""
   },
   {
     "title": "Share your Blazor applications with the world: Publishing on GitHub Pages",
     "fileName": "blazorInGithubPages",
     "date": "MAY 10, 2023",
     "tags": ["Github", "Blazor"]
+    "description": ""
   }
 ]

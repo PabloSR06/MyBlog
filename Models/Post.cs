@@ -12,6 +12,8 @@ namespace MyBlog.Models
         public string? Date { get; set; }
         [JsonProperty("tags")]
         public List<string>? tags { get; set; }
+        [JsonProperty("description")]
+        public string? description { get; set; }
 
     }
 }
