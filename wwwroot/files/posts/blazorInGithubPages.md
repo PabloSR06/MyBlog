@@ -8,7 +8,7 @@ First, we create a repository or rename an existing one to `<user>.github.io`. O
 
 Then we go to ["Actions"](https://docs.github.com/en/actions) tab in the repository and create our own file .yml.
 
-![Github actions](./img/action.png)
+![Github actions](https://raw.githubusercontent.com/PabloSR06/pablosr06.github.io/main/wwwroot/files/posts/img/action.png)
 
 To this action we introduced the following settings:
 ```yaml
@@ -51,6 +51,6 @@ jobs:
 
 There are different projects to carry out this action but in this case we have used the project from [James Ives](https://github.com/JamesIves/github-pages-deploy-action). For this task to work it needs permissions, so we need a key [here you have all the related information](https://docs.github.com/en/actions/security-guides/encrypted-secrets) when the key is created we have to add it in the project configuration as a repository secret.
 
-Once we have the action working, we need to activate the service to host the project in "Settings" tab -> "Pages". ![Github Pages Option](./img/githubpages.png)
+Once we have the action working, we need to activate the service to host the project in "Settings" tab -> "Pages". ![Github Pages Option](https://raw.githubusercontent.com/PabloSR06/pablosr06.github.io/main/wwwroot/files/posts/img/githubpages.png)
 
 Using "Deploy from a branch," select the branch where the action publishes the files. In this case, it is the branch gh-pages. Click save, and it's done.
