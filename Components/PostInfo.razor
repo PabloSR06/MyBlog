@@ -1,23 +1,24 @@
-﻿@using Models
-@inject HttpClient? HttpClient
-@using Markdig
+﻿@using Models;
+@inject HttpClient? HttpClient;
+@using Markdig;
+@inject NavigationManager? NavigationManager;
 
 
-<PageTitle>@postInfo?.Title</PageTitle>
+<PageTitle>@PostData?.Title</PageTitle>
 <HeadContent>
-    <meta property="og:title" content="@postInfo?.Title - Pablo Suarez Romero">
-    <meta property="og:description" content="@postInfo?.description">
-    <meta name="twitter:title" content="@postInfo?.Title - Pablo Suarez Romero" />
-    <meta name="twitter:description" content="@postInfo?.description" />
+    <meta property="og:title" content="@PostData?.Title - Pablo Suarez Romero">
+    <meta property="og:description" content="@PostData?.description">
+    <meta name="twitter:title" content="@PostData?.Title - Pablo Suarez Romero" />
+    <meta name="twitter:description" content="@PostData?.description" />
 </HeadContent>
 <div class="post">
     <div class="post-info">
-        <h2 class="post-title">@postInfo?.Title</h2>
-        <p class="post-date">@postInfo?.Date</p>
+        <h2 class="post-title">@PostData?.Title</h2>
+        <p class="post-date">@PostData?.Date</p>
     </div>
     <div>
         <div class="post-content">
-            @((MarkupString)text)
+            @((MarkupString)Text)
             </div>
     </div>
     <div style="margin:50px;"></div>
@@ -28,16 +29,25 @@
     [Parameter]
     public string? Path { get; set; }
 
-    private string text = "";
+    private string Text = "";
 
-    private Post? postInfo { get; set; }
+    private Post? PostData { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        var empty =  await HttpClient.GetStringAsync($"/files/posts/{Path}.md") ?? "Error";
-        text = Markdown.ToHtml(empty);
+        var empty = String.Empty;
+        var posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new();
+        var found =  posts.Find(x=> x.fileName.Equals(Path));
 
-        var posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json");
-        postInfo = posts?.Where(x => x.fileName == Path).FirstOrDefault() ?? new();
+        if (found != null)
+        {
+            empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
+            Text = Markdown.ToHtml(empty);
+            PostData = found ?? new();
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/");
+        }
     }
 }
