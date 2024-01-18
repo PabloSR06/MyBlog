@@ -56,3 +56,6 @@ The F1 score is a metric that evaluates a model's accuracy considering both prec
 > F1 score combines both of these precision and recall and symmetrically represents them in the formula: F1 = 2 * (precision * recall) / (precision + recall)
 >
 > **F1** = 2 * ( (0.769 * 0.909) / (0.769 + 0.909)) = 0.8331 
+>
+
+In conclusion, understanding these key metrics is basic when evaluating the performance of any machine learning model, as they provide valuable insights into how well the model is acting. �Precision measures the accuracy of the model's positive predictions, while Recall assesses the model's ability to identify all relevant instances. Confidence score estimates the model's certainty about its predictions. Lastly, the F1 Score balances Precision and Recall to provide a unified measure of the model's overall performance. Together, these metrics give us a better view of our model's behavior, helping us refine and improve it for better results. In anything you do, it is important to understand every bit of it.
