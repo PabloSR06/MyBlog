@@ -33,5 +33,12 @@
     "date": "MAY 10, 2023",
     "tags": ["Github", "Blazor"],
     "description": ""
+  },
+  {
+    "title": "Metrics in Machine Learning: An Introduction to Precision, Recall, and F1 Score",
+    "fileName": "basicMetricsInMl",
+    "date": "JAN 19, 2024",
+    "tags": [ "Python", "ML", "Python" ],
+    "description": ""
   }
 ]
