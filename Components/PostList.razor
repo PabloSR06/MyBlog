@@ -1,6 +1,6 @@
 ﻿@using Models;
-@inject HttpClient HttpClient;
-@inject NavigationManager NavigationManager;
+@inject HttpClient? HttpClient;
+@inject NavigationManager? NavigationManager;
 
 @if (isLoaded)
 {
@@ -46,6 +46,8 @@ else
 
     private void goToPost(string fileName)
     {
-        NavigationManager.NavigateTo($"/blog/post?file={fileName}");
+        var x = "";
+
+        NavigationManager.NavigateTo(fileName);
     }
 }
