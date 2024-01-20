@@ -1,4 +1,5 @@
-﻿@page "/{*path}"
+﻿@page "/"
+@page "/blog"
 @inject NavigationManager? NavigationManager
 
 <PageTitle>Pablo Suarez Romero</PageTitle>
@@ -7,41 +8,33 @@
     <meta property="og:description" content="Small blog">
     <meta name="twitter:title" content="Pablo Suarez Romero" />
     <meta name="twitter:description" content="Small blog" />
+    <meta property="og:description" content="Welcome to my personal blog where I talk about everything I find interesting related to technology." />
 </HeadContent>
 
-@if (string.IsNullOrEmpty(this.Path))
-{
-    <div class="sectionBlock firstBlock" id="sec-1">
-        <div class="container">
+<div class="sectionBlock firstBlock" id="sec-1">
+    <div class="container">
 
-            <MyBlog.Components.Portrait></MyBlog.Components.Portrait>
+        <MyBlog.Components.Portrait></MyBlog.Components.Portrait>
 
 
-            <a href="#blog" aria-label="go to blog">
-                <div class="scroll-down"></div>
-            </a>
-        </div>
+        <a href="#blog" aria-label="go to blog">
+            <div class="scroll-down"></div>
+        </a>
     </div>
+</div>
 
-    <div class="sectionBlock secondBlock" id="blog">
-        <div class="">
-
-
-            <MyBlog.Components.PostList></MyBlog.Components.PostList>
+<div class="sectionBlock secondBlock" id="blog">
+    <div class="">
 
 
-        </div>
+        <MyBlog.Components.PostList></MyBlog.Components.PostList>
+
+
     </div>
-}
-else
-{
-    <MyBlog.Components.Header></MyBlog.Components.Header>
-    <MyBlog.Components.PostInfo Path="@Path"></MyBlog.Components.PostInfo>
+</div>
 
-}
 
 @code {
-    [Parameter]
-    public string? Path { get; set; }
+
 
 }
