@@ -1,5 +1,4 @@
-﻿@page "/blog/post"
-@using Models;
+﻿@using Models;
 @inject HttpClient HttpClient;
 @using Markdig;
 @inject NavigationManager NavigationManager;
@@ -22,7 +21,6 @@
         <meta name="twitter:title" content="@PostData?.Title - Pablo Suarez Romero" />
         <meta name="twitter:description" content="@PostData?.description" />
     </HeadContent>
-    <MyBlog.Components.Header></MyBlog.Components.Header>
     <div class="post">
         <div class="post-info">
             <h2 class="post-title">@PostData?.Title</h2>
@@ -39,10 +37,7 @@
 @code {
 
     [Parameter]
-    public string FileName { get; set; }
-
-    [Parameter] public string FileId { get; set; }
-
+    public string? Path { get; set; }
 
     private string Text = "";
 
@@ -50,54 +45,37 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var uri = new Uri(NavigationManager.Uri);
-        var fileId = System.Web.HttpUtility.ParseQueryString(uri.Query).Get("file");
+        string empty = String.Empty;
+        List<Post> posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
 
-        if (!string.IsNullOrEmpty(fileId))
+        var found = posts.Find(x => x.fileName.Contains(Path));
+
+        //TODO: Sometimes if you manually type the url it doesn't work, this is a workaround
+        //Contains can not evaluate 
+        if(found == null)
         {
-            FileName = fileId;
+            foreach (var x in posts)
+            {
+                if (x.fileName.ToLower() == Path.ToLower())
+                {
+                    found = x;
+                }
+            }
         }
-        
-        if (FileName == null)
+
+        if (found != null)
         {
-            NavigationManager.NavigateTo("/");
+            if(found.isExternal)
+            {
+                NavigationManager.NavigateTo(found.url.ToString());
+            }
+            empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
+            Text = Markdown.ToHtml(empty);
+            PostData = found ?? new();
         }
         else
         {
-
-
-            string empty = String.Empty;
-            List<Post> posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
-
-            var found = posts.Find(x => x.fileName.Contains(FileName));
-
-            //TODO: Sometimes if you manually type the url it doesn't work, this is a workaround
-            //Contains can not evaluate
-            if (found == null)
-            {
-                foreach (var x in posts)
-                {
-                    if (x.fileName.ToLower() == FileName.ToLower())
-                    {
-                        found = x;
-                    }
-                }
-            }
-
-            if (found != null)
-            {
-                if (found.isExternal)
-                {
-                    NavigationManager.NavigateTo(found.url.ToString());
-                }
-                empty = await HttpClient.GetStringAsync($"/files/posts/{found.fileName}.md");
-                Text = Markdown.ToHtml(empty);
-                PostData = found ?? new();
-            }
-            else
-            {
-                NavigationManager.NavigateTo("/");
-            }
+            NavigationManager.NavigateTo("/");
         }
     }
 }
