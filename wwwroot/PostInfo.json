@@ -4,6 +4,8 @@
     "fileName": "retrofitAndroid",
     "date": "MAR 02, 2022",
     "tags": [ "Java", "Android" ],
+    "isExternal": false,
+    "url": "",
     "description": ""
   },
   {
@@ -11,6 +13,8 @@
     "fileName": "javaEnviroment",
     "date": "MAR 16, 2022",
     "tags": [ "Java", "Android", "Windows" ],
+    "isExternal": false,
+    "url": "",
     "description": ""
   },
   {
@@ -18,6 +22,8 @@
     "fileName": "azureADOAuth",
     "date": "APR 30, 2022",
     "tags": [ "C#", "AzureAD" ],
+    "isExternal": false,
+    "url": "",
     "description": ""
   },
   {
@@ -25,13 +31,17 @@
     "fileName": "writecommits",
     "date": "JUN 03, 2022",
     "tags": [ "Git" ],
+    "isExternal": false,
+    "url": "",
     "description": ""
   },
   {
     "title": "Share your Blazor applications with the world: Publishing on GitHub Pages",
     "fileName": "blazorInGithubPages",
     "date": "MAY 10, 2023",
-    "tags": ["Github", "Blazor"],
+    "tags": [ "Github", "Blazor" ],
+    "isExternal": false,
+    "url": "",
     "description": ""
   },
   {
@@ -39,6 +49,17 @@
     "fileName": "basicMetricsInMl",
     "date": "JAN 19, 2024",
     "tags": [ "Python", "ML", "Python" ],
+    "isExternal": false,
+    "url": "",
     "description": ""
+  },
+  {
+    "title": "Test",
+    "fileName": "Test",
+    "date": "JAN 19, 2024",
+    "tags": [ "Test" ],
+    "isExternal": true,
+    "url": "https://google.es",
+    "description": "Test"
   }
 ]

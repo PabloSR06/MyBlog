@@ -1,7 +1,7 @@
 ﻿@using Models;
-@inject HttpClient? HttpClient;
+@inject HttpClient HttpClient;
 @using Markdig;
-@inject NavigationManager? NavigationManager;
+@inject NavigationManager NavigationManager;
 
 
 <link rel="stylesheet" href="css/markdown.css">
@@ -63,10 +63,13 @@
             }
         }
 
-
         if (found != null)
         {
-            empty = await HttpClient.GetStringAsync($"/files/posts/{found.fileName}.md");
+            if(found.isExternal)
+            {
+                NavigationManager.NavigateTo(found.url.ToString());
+            }
+            empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
             Text = Markdown.ToHtml(empty);
             PostData = found ?? new();
         }
