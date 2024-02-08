@@ -27,7 +27,7 @@
     "description": ""
   },
   {
-    "title": "How to write descent commits",
+    "title": "How to write decent commits",
     "fileName": "writecommits",
     "date": "JUN 03, 2022",
     "tags": [ "Git" ],
@@ -51,6 +51,15 @@
     "tags": [ "Python", "ML", "Python" ],
     "isExternal": false,
     "url": "",
+    "description": ""
+  },
+  {
+    "title": "How to Optimize Communication Using AI Models",
+    "fileName": "optimizeAIrequest",
+    "date": "FEB 06, 2024",
+    "tags": [ "Azure", "OpenAI" ],
+    "isExternal": true,
+    "url": "https://intelequia.com/en/blog/post/how-to-optimize-communication-using-ai-models",
     "description": ""
   }
 ]
