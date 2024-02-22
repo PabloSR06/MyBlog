@@ -61,5 +61,14 @@
     "isExternal": true,
     "url": "https://intelequia.com/en/blog/post/how-to-optimize-communication-using-ai-models",
     "description": ""
+  },
+  {
+    "title": "Keys to Customize and Optimize AI-based Chatbots",
+    "fileName": "customizeAIrequest",
+    "date": "FEB 14, 2024",
+    "tags": [ "Azure", "OpenAI" ],
+    "isExternal": true,
+    "url": "https://intelequia.com/en/blog/post/keys-to-customize-and-optimize-ai-based-chatbots",
+    "description": ""
   }
 ]
