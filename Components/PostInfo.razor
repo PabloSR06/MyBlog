@@ -1,7 +1,9 @@
 ﻿@using Models;
 @inject HttpClient HttpClient;
 @using Markdig;
+@using MarkdigExtensions.SyntaxHighlighting;
 @inject NavigationManager NavigationManager;
+@using ColorCode.Styling;
 
 
 <link rel="stylesheet" href="css/markdown.css">
@@ -43,8 +45,13 @@
 
     private Post? PostData { get; set; }
 
+
+
     protected override async Task OnInitializedAsync()
     {
+        var pipeline = new MarkdownPipelineBuilder().UseSyntaxHighlighting().UseYamlFrontMatter().Build();
+
+
         string empty = String.Empty;
         List<Post> posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
 
@@ -69,8 +76,8 @@
             {
                 NavigationManager.NavigateTo(found.url.ToString());
             }
-            empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
-            Text = Markdown.ToHtml(empty);
+            empty = await HttpClient.GetStringAsync($"/posts/{Path}.md");
+            Text = Markdown.ToHtml(empty, pipeline);
             PostData = found ?? new();
         }
         else
