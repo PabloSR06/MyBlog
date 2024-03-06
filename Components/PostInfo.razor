@@ -1,7 +1,9 @@
 ﻿@using Models;
 @inject HttpClient HttpClient;
 @using Markdig;
+@using MarkdigExtensions.SyntaxHighlighting;
 @inject NavigationManager NavigationManager;
+@using ColorCode.Styling;
 
 
 <link rel="stylesheet" href="css/markdown.css">
@@ -43,39 +45,50 @@
 
     private Post? PostData { get; set; }
 
+
+
     protected override async Task OnInitializedAsync()
     {
-        string empty = String.Empty;
-        List<Post> posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
+        var pipeline = new MarkdownPipelineBuilder().UseSyntaxHighlighting().UseYamlFrontMatter().Build();
 
-        var found = posts.Find(x => x.fileName.Contains(Path));
 
-        //TODO: Sometimes if you manually type the url it doesn't work, this is a workaround
-        //Contains can not evaluate 
-        if(found == null)
+        try
         {
-            foreach (var x in posts)
+            string empty = String.Empty;
+            List<Post> posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
+
+            Post found = posts.Find(x => x.fileName.Contains(Path));
+
+            //TODO: Sometimes if you manually type the url it doesn't work, this is a workaround
+            //Contains can not evaluate
+            if (found == null)
             {
-                if (x.fileName.ToLower() == Path.ToLower())
+                foreach (var x in posts)
                 {
-                    found = x;
+                    if (x.fileName.ToLower() == Path.ToLower())
+                    {
+                        found = x;
+                    }
                 }
             }
-        }
 
-        if (found != null)
-        {
-            if(found.isExternal)
+            if (found != null)
             {
-                NavigationManager.NavigateTo(found.url.ToString());
+                if (found.isExternal)
+                {
+                    NavigationManager.NavigateTo(found.url.ToString());
+                }
+                empty = await HttpClient.GetStringAsync($"/posts/{Path}.md");
+                Text = Markdown.ToHtml(empty, pipeline);
+                PostData = found ?? new();
             }
-            empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
-            Text = Markdown.ToHtml(empty);
-            PostData = found ?? new();
-        }
-        else
+            else
+            {
+                NavigationManager.NavigateTo("/");
+            }
+        }catch(Exception e)
         {
-            NavigationManager.NavigateTo("/");
+            Text = "<p class=\"textError\">Esto falla más que una escopeta de feria</p>";
         }
     }
 }

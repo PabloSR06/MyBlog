@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Components\Header.razor.css" />
     <None Remove="Components\Portrait.razor.css" />
+    <None Remove="Components\PostList - Copy.razor.css" />
     <None Remove="Components\PostList.razor.css" />
     <None Remove="Pages\Index.razor.css" />
   </ItemGroup>
@@ -23,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Markdig" Version="0.31.0" />
+    <PackageReference Include="Markdig" Version="0.35.0" />
+    <PackageReference Include="MarkdigExtensions.SyntaxHighlighting" Version="1.0.3" />
     <PackageReference Include="Markdown" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.11" PrivateAssets="all" />

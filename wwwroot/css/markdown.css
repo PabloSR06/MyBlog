@@ -6,3 +6,15 @@ h3{
     margin-top: 3rem !important;
 margin-bottom: 1.5rem !important;
 }
+pre {
+    background-color: #f4f4f4;
+    padding: 1em;
+    border-radius: 0.5em;
+    overflow: auto;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #333;
+}
