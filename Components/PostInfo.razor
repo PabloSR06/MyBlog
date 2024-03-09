@@ -78,7 +78,7 @@
                 {
                     NavigationManager.NavigateTo(found.url.ToString());
                 }
-                empty = await HttpClient.GetStringAsync($"/posts/{Path}.md");
+                empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
                 Text = Markdown.ToHtml(empty, pipeline);
                 PostData = found ?? new();
             }
