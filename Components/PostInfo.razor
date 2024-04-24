@@ -49,7 +49,11 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var pipeline = new MarkdownPipelineBuilder().UseSyntaxHighlighting().UseYamlFrontMatter().Build();
+        var pipeline = new MarkdownPipelineBuilder()
+         .UseAdvancedExtensions()
+         .UseYamlFrontMatter()
+         .UseSyntaxHighlighting()
+         .Build();
 
 
         try

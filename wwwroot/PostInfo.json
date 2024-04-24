@@ -70,5 +70,14 @@
     "isExternal": true,
     "url": "https://intelequia.com/en/blog/post/keys-to-customize-and-optimize-ai-based-chatbots",
     "description": ""
+  },
+  {
+    "title": "Dockerizing your Database: MySQL and Docker",
+    "fileName": "mysqlWithDocker",
+    "date": "MAR 12, 2024",
+    "tags": [ "MySQL", "Docker", "PhpMyAdmin" ],
+    "isExternal": false,
+    "url": "",
+    "description": ""
   }
 ]
