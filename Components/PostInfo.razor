@@ -1,5 +1,5 @@
 ﻿@using Models;
-@inject HttpClient HttpClient;
+@inject HttpClient _httpClient;
 @using Markdig;
 @using MarkdigExtensions.SyntaxHighlighting;
 @inject NavigationManager NavigationManager;
@@ -59,7 +59,7 @@
         try
         {
             string empty = String.Empty;
-            List<Post> posts = await HttpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
+            List<Post> posts = await _httpClient.GetFromJsonAsync<List<Post>>("PostInfo.json") ?? new List<Post>();
 
             Post found = posts.Find(x => x.fileName.Contains(Path));
 
@@ -82,7 +82,7 @@
                 {
                     NavigationManager.NavigateTo(found.url.ToString());
                 }
-                empty = await HttpClient.GetStringAsync($"/files/posts/{Path}.md");
+                empty = await _httpClient.GetStringAsync($"/files/posts/{Path}.md");
                 Text = Markdown.ToHtml(empty, pipeline);
                 PostData = found ?? new();
             }
