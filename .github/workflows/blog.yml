@@ -7,13 +7,13 @@ on:
     - reopened
     - closed
     branches:
-    - main
+    - test
   push:
     branches:
-    - main
+    - test
 env:
   AZURE_STATIC_WEBAPP_NAME: blog
-  APP_DIRECTORY: pablosr06.github
+  APP_DIRECTORY: /Client
   API_DIRECTORY: ''
   OUTPUT: wwwroot
   DEPLOYMENT_ENVIRONMENT: preview
