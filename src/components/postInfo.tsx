@@ -1,16 +1,18 @@
 // @ts-ignore
 import styles from "@css/postInfo.module.css";
 import React, {useEffect, useState} from "react";
-import {PostModel} from "@data/models.ts";
+import {ItemModel} from "@data/models.ts";
 import {getPostByName} from "@data/requests.ts";
 import {Loader} from "@components/loader.tsx";
+import Markdown from "markdown-to-jsx";
+import "@css/markdown.css";
 
 interface PostInfoProps {
     name: string
 }
 export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
 
-    const [post, setPost] = useState<PostModel>({} as PostModel);
+    const [post, setPost] = useState<ItemModel>({} as ItemModel);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -37,12 +39,14 @@ export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
     return (
         <div className={styles.post}>
             <div className={styles.postInfo}>
-                <h2 className={styles.postTitle}>{post.title}</h2>
-                <p className={styles.postDate}>{post.date}</p>
+                <h2 className={styles.postTitle}>{post.postInfo.title}</h2>
+                <p className={styles.postDate}>{post.postInfo.date}</p>
             </div>
             <div>
                 <div className={styles.postContent}>
-                    {post.description}
+
+                    <Markdown>{post.content}</Markdown>
+
                 </div>
             </div>
             <div className={styles.postBottom}></div>

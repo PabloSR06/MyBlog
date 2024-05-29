@@ -1,5 +1,5 @@
 
-import {PostModel} from "@data/models";
+import {ItemModel, PostModel} from "@data/models";
 
 
 export async function getPost(): Promise<PostModel[] > {
@@ -9,11 +9,18 @@ export async function getPost(): Promise<PostModel[] > {
         return [];
     }
 }
-export async function getPostByName(fileName:string): Promise<PostModel | undefined> {
+export async function getPostByName(fileName:string): Promise<ItemModel | undefined> {
 
     try{
+        const itemModel:ItemModel = {} as ItemModel;
         const file:PostModel[] =  await fetch('/data/PostInfo.json').then(response => response.json());
-        return file.find(post => post.fileName === fileName);
+        itemModel.postInfo =  <PostModel> file.find(post => post.fileName === fileName);
+
+        const response = await fetch(`/data/posts/${fileName}.md`);
+
+        itemModel.content = await response.text();
+
+        return itemModel;
     }
     catch (error) {
         return undefined;

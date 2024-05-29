@@ -7,3 +7,7 @@ export interface PostModel{
     isExternal: boolean;
     url: string;
 }
+export interface ItemModel{
+    postInfo: PostModel;
+    content: string;
+}
