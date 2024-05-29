@@ -17,8 +17,8 @@ export const PostBlock:React.FC<PostBlockProps> = ({ data }) => {
                 <h2 className={styles.blogListTitle}>{data.title}</h2>
                 <div className={styles.blogListInfo}>
                     <div className={styles.tagList}>
-                        {data.tags.map(tag => {
-                            return <p className={styles.tag}>{tag}</p>;
+                        {data.tags.map((tag,index) => {
+                            return <p className={styles.tag} key={index}>{tag} </p>;
                         })}
                     </div>
                     <p className={styles.blogListDate}>{data.date}</p>

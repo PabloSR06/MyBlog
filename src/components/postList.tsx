@@ -16,10 +16,10 @@ export default function PostList() {
 
     return (
         <div className={styles.blogGrid}>
-            {posts.map(post => {
+            {posts.map((post, index) => {
 
                 return (
-                    <PostBlock data={post}/>
+                    <PostBlock data={post} key={index}/>
                 )
             })}
         </div>
