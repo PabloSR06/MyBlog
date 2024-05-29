@@ -1,0 +1,40 @@
+.linkSocial {
+    text-decoration: none;
+}
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.iconSocial {
+    display: block;
+    width: 30px;
+    height: 30px;
+    max-height: 100%;
+    max-width: 100%;
+}
+.socialsContainer {
+    margin-top: 20px;
+}
+.socialsUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, auto);
+    gap: 22px;
+}
+.mainImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+}
