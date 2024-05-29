@@ -16,7 +16,7 @@ export default function PostList() {
 
     return (
         <div className={styles.blogGrid}>
-            {posts.map((post, index) => {
+            {posts.reverse().map((post, index) => {
 
                 return (
                     <PostBlock data={post} key={index}/>

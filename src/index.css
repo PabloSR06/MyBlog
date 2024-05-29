@@ -1,5 +1,9 @@
 body{
     font-family: 'Segoe UI Historic', sans-serif;
+
+}
+a{
+    color: #0071c1;
 }
 .sectionBlock {
     min-height: 100vh;
