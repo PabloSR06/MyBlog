@@ -1,4 +1,3 @@
-
 import Header from "@components/header.tsx";
 import {PostInfo} from "@components/postInfo.tsx";
 import {useParams} from "react-router-dom";

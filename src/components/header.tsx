@@ -1,4 +1,3 @@
-// @ts-ignore
 import styles from "@css/header.module.css";
 import {BuyMeACoffeeUrl, LinkedinUrl, TwitterUrl} from "@data/constants.tsx";
 import {CupHotFill, Github, House, Linkedin, Twitter} from "react-bootstrap-icons";

@@ -1,4 +1,3 @@
-// @ts-ignore
 import styles from "@css/postList.module.css";
 import {useEffect, useState} from "react";
 import {getPost} from "@data/requests.ts";

@@ -1,4 +1,3 @@
-// @ts-ignore
 import styles from "@css/portrait.module.css";
 import {
     BuyMeACoffeeUrl,
