@@ -1,5 +1,4 @@
 import Header from "@components/header.tsx";
-// @ts-ignore
 import styles from "@css/notFound.module.css";
 
 

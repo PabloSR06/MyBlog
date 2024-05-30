@@ -1,4 +1,3 @@
-// @ts-ignore
 import styles from "@css/loader.module.css";
 
 

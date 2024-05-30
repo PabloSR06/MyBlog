@@ -1,5 +1,3 @@
-
-// @ts-ignore
 import styles from "@css/postInfo.module.css";
 import React, {useEffect, useState} from "react";
 import {ItemModel} from "@data/models.ts";

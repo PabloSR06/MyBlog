@@ -1,4 +1,3 @@
-// @ts-ignore
 import styles from "@css/postList.module.css";
 import React from "react";
 import {PostModel} from "@data/models.ts";
