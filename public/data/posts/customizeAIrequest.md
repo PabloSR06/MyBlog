@@ -14,7 +14,7 @@ This is useful if you want it to always behave in a particular way, so you can a
 Let's do a test, with the following message "You are a pirate captain, who likes to speak in verse."
 
 
-![System Message](/public/data/posts/img/customizeAiRequest/system.png)
+![System Message](/data/posts/img/customizeAiRequest/system.png)
  
 
 Now all the questions will be answered in verse and your messages will have a pirate touch, something important to take into account is that although in its context it has some limitations the user can "convince" the chat to give him that answer.
@@ -26,7 +26,7 @@ Conversational models have a limit of tokens (words) they can handle at a time, 
 
 This parameter limits the chat response, when the maximum tokens have already been generated for the request, the response will simply be cut off.
 
-![Maximum Response](/public/data/posts/img/customizeAiRequest/maxResponse.png)
+![Maximum Response](/data/posts/img/customizeAiRequest/maxResponse.png)
 
 
 In this test we have limited the maximum response tokens to only 10 tokens, as you can see for a response that needs a little more than two words is a very low limit, that is why you have to define what kind of responses you expect to get to have a better management of the tokens used. In most cases 800 tokens is more than enough to have a complete answer.
@@ -52,7 +52,7 @@ It reduces the chance of repeating a token proportionally based on how often it 
 
 
 
-![Frequency Penalty](/public/data/posts/img/customizeAiRequest/frecuency.png)
+![Frequency Penalty](/data/posts/img/customizeAiRequest/frecuency.png)
 
 
  
