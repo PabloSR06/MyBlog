@@ -1,0 +1,29 @@
+.postInfo {
+    text-align: center;
+}
+.postTitle {
+    font-size: 2em;
+}
+.postDate {
+    font-size: 0.8em;
+    color: #737373;
+}
+.postContent {
+    max-width: 100%;
+    overflow: hidden;
+}
+.post {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+.postBottom{
+    margin:50px;
+}
