@@ -33,13 +33,14 @@ export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
         fetchData().then(() => setLoading(false));
     }, [name]);
 
+
     if(loading){
         return <Loader/>
-    }else if (!post) {
+    }else if (!post.postInfo) {
         window.location.href = '/404';
         //return <NotFoundPage/>;
     }else if(post.postInfo.isExternal){
-        //window.location.href = post.postInfo.url;
+        window.location.href = post.postInfo.url;
     }
     return (
         <div className={styles.post}>
