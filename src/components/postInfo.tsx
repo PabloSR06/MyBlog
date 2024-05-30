@@ -1,11 +1,14 @@
+
 // @ts-ignore
 import styles from "@css/postInfo.module.css";
 import React, {useEffect, useState} from "react";
 import {ItemModel} from "@data/models.ts";
 import {getPostByName} from "@data/requests.ts";
 import {Loader} from "@components/loader.tsx";
-import Markdown from "markdown-to-jsx";
 import "@css/markdown.css";
+import Markdown from "react-markdown";
+import rehypeRaw from 'rehype-raw';
+
 
 interface PostInfoProps {
     name: string
@@ -35,6 +38,8 @@ export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
     }else if (!post) {
         window.location.href = '/404';
         //return <NotFoundPage/>;
+    }else if(post.postInfo.isExternal){
+        //window.location.href = post.postInfo.url;
     }
     return (
         <div className={styles.post}>
@@ -45,7 +50,8 @@ export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
             <div>
                 <div className={styles.postContent}>
 
-                    <Markdown>{post.content}</Markdown>
+                    <Markdown children={post.content} rehypePlugins={[rehypeRaw]}/>
+
 
                 </div>
             </div>
