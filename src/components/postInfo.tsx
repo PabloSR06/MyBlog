@@ -6,6 +6,9 @@ import {Loader} from "@components/loader.tsx";
 import "@css/markdown.css";
 import Markdown from "react-markdown";
 import rehypeRaw from 'rehype-raw';
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "@css/github-dark-dimmed.css";
 
 
 interface PostInfoProps {
@@ -49,7 +52,7 @@ export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
             <div>
                 <div className={styles.postContent}>
 
-                    <Markdown children={post.content} rehypePlugins={[rehypeRaw]}/>
+                    <Markdown children={post.content} rehypePlugins={[rehypeRaw, rehypeHighlight]} remarkPlugins={[remarkGfm]}/>
 
 
                 </div>
