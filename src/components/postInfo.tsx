@@ -16,11 +16,13 @@ interface PostInfoProps {
 export const PostInfo:React.FC<PostInfoProps> = ({post}) => {
 
     return (
-        <div className={styles.post}>
+        <div className={styles.post} role="article">
             <Helmet>
                 <title>{post.postInfo.title}</title>
-                <meta name="description" content={post.postInfo.description} />
-                <meta name="theme-color" content="#008f68" />
+                <meta name="og:description" content={post.postInfo.description}/>
+                <meta name="theme-color" content="#008f68"/>
+                <meta name="og:url" content={`https://blog.pablosr.com/post/${post.postInfo.id}`}/>
+                <meta property="og:type" content="article"/>
             </Helmet>
             <div className={styles.postInfo}>
                 <h2 className={styles.postTitle}>{post.postInfo.title}</h2>
