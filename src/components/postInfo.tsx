@@ -8,6 +8,7 @@ import Markdown from "react-markdown";
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
+import "@css/github-dark-dimmed.css";
 
 
 interface PostInfoProps {
