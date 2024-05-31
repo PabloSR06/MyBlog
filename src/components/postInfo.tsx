@@ -9,6 +9,7 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "@css/github-dark-dimmed.css";
+import {Helmet} from "react-helmet";
 
 
 interface PostInfoProps {
@@ -45,6 +46,11 @@ export const PostInfo:React.FC<PostInfoProps> = ({name}) => {
     }
     return (
         <div className={styles.post}>
+            <Helmet>
+                <title>{post.postInfo.title}</title>
+                <meta name="description" content={post.postInfo.description} />
+                <meta name="theme-color" content="#008f68" />
+            </Helmet>
             <div className={styles.postInfo}>
                 <h2 className={styles.postTitle}>{post.postInfo.title}</h2>
                 <p className={styles.postDate}>{post.postInfo.date}</p>
