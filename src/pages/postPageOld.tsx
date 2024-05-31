@@ -3,13 +3,12 @@ import {PostInfo} from "@components/postInfo.tsx";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ItemModel} from "@data/models.ts";
-import {getPostById} from "@data/requests.ts";
+import {getPostByName} from "@data/requests.ts";
 import {Loader} from "@components/loader.tsx";
 
-export default  function PostPage() {
+export default  function PostPageOld() {
 
-    const { id } = useParams();
-
+    const { fileName } = useParams();
 
     const [post, setPost] = useState<ItemModel>({} as ItemModel);
     const [loading, setLoading] = useState(true);
@@ -17,7 +16,7 @@ export default  function PostPage() {
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
-            const data = await getPostById(parseInt(id || ""));
+            const data = await getPostByName(fileName || "");
 
             if(data === undefined){
                 window.location.href = '/404';
@@ -27,7 +26,7 @@ export default  function PostPage() {
         }
 
         fetchData().then(() => setLoading(false));
-    }, [id]);
+    }, [fileName]);
 
     if(loading){
         return <Loader/>

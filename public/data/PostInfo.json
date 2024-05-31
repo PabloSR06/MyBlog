@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Retrofit Android",
     "fileName": "retrofitAndroid",
     "date": "MAR 02, 2022",
@@ -9,6 +10,7 @@
     "description": ""
   },
   {
+    "id": 2,
     "title": "How to prepare a Java development environment on Windows",
     "fileName": "javaEnvironment",
     "date": "MAR 16, 2022",
@@ -18,6 +20,7 @@
     "description": ""
   },
   {
+    "id": 3,
     "title": "AZURE AD Obtaining OAuth Token",
     "fileName": "azureADOAuth",
     "date": "APR 30, 2022",
@@ -27,6 +30,7 @@
     "description": ""
   },
   {
+    "id": 4,
     "title": "How to write decent commits",
     "fileName": "writecommits",
     "date": "JUN 03, 2022",
@@ -36,6 +40,7 @@
     "description": ""
   },
   {
+    "id": 5,
     "title": "Share your Blazor applications with the world: Publishing on GitHub Pages",
     "fileName": "blazorInGithubPages",
     "date": "MAY 10, 2023",
@@ -45,6 +50,7 @@
     "description": ""
   },
   {
+    "id": 6,
     "title": "Metrics in Machine Learning: An Introduction to Precision, Recall, and F1 Score",
     "fileName": "basicMetricsInMl",
     "date": "JAN 19, 2024",
@@ -54,6 +60,7 @@
     "description": ""
   },
   {
+    "id": 7,
     "title": "How to Optimize Communication Using AI Models",
     "fileName": "optimizeAIrequest",
     "date": "FEB 06, 2024",
@@ -63,6 +70,7 @@
     "description": ""
   },
   {
+    "id": 8,
     "title": "Keys to Customize and Optimize AI-based Chatbots",
     "fileName": "customizeAIrequest",
     "date": "FEB 14, 2024",
@@ -72,6 +80,7 @@
     "description": ""
   },
   {
+    "id": 9,
     "title": "Dockerizing your Database: MySQL and Docker",
     "fileName": "mysqlWithDocker",
     "date": "MAR 12, 2024",
