@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "@css/github-dark-dimmed.css";
 import {Helmet} from "react-helmet";
+import {Name} from "@data/texts.ts";
 
 
 interface PostInfoProps {
@@ -19,11 +20,14 @@ export const PostInfo:React.FC<PostInfoProps> = ({post}) => {
         <div className={styles.post}>
             <Helmet>
                 <title>{post.postInfo.title}</title>
-                <meta name="og:description" content={post.postInfo.description}/>
+                <meta property="og:description" content={post.postInfo.description}/>
                 <meta name="theme-color" content="#008f68"/>
-                <meta name="og:url" content={`https://blog.pablosr.com/post/${post.postInfo.id}`}/>
+                <meta property="og:url" content={`https://blog.pablosr.com/post/${post.postInfo.id}`}/>
                 <meta property="og:type" content="article"/>
                 <meta name="keywords" content={post.postInfo.tags.join(", ")}/>
+
+                <meta name="twitter:title" content={post.postInfo.title + " " + Name}/>
+                <meta name="twitter:description" content={post.postInfo.description}/>
 
             </Helmet>
             <div className={styles.postInfo}>

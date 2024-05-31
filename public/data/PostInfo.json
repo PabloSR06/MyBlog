@@ -7,7 +7,7 @@
     "tags": [ "Java", "Android" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Learn how to integrate Retrofit, a type-safe HTTP client for Android and Java, into your Android projects."
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "tags": [ "Java", "Android", "Windows" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Step-by-step guide on setting up a Java development environment on a Windows operating system."
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "tags": [ "C#", "AzureAD" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Understand the process of obtaining OAuth tokens from Azure Active Directory using C#."
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "tags": [ "Git" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Guidelines and best practices for writing clear and informative commits when using Git version control."
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "tags": [ "Github", "Blazor" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Tutorial on how to publish Blazor applications on GitHub Pages for easy sharing and accessibility."
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "tags": [ "Python", "ML", "Python" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Introduction to fundamental metrics in machine learning, including precision, recall, and F1 score, using Python."
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "tags": [ "Azure", "OpenAI" ],
     "isExternal": true,
     "url": "https://intelequia.com/en/blog/post/how-to-optimize-communication-using-ai-models",
-    "description": ""
+    "description": "Explore techniques for optimizing communication using AI models, with a focus on Azure and OpenAI technologies. "
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "tags": [ "Azure", "OpenAI" ],
     "isExternal": true,
     "url": "https://intelequia.com/en/blog/post/keys-to-customize-and-optimize-ai-based-chatbots",
-    "description": ""
+    "description": "Discover strategies for customizing and optimizing AI-based chatbots, leveraging Azure and OpenAI capabilities."
   },
   {
     "id": 9,
@@ -87,6 +87,6 @@
     "tags": [ "MySQL", "Docker", "PhpMyAdmin" ],
     "isExternal": false,
     "url": "",
-    "description": ""
+    "description": "Learn how to containerize MySQL databases using Docker, along with integrating PhpMyAdmin for easy database management."
   }
 ]
