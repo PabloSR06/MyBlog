@@ -9,7 +9,7 @@ export const PostBlock:React.FC<PostBlockProps> = ({ data }) => {
 
 
     const goPost = () => {
-        window.location.href = `/${data.fileName}`;
+        window.location.href = `/post/${data.id}`;
     }
     return (
             <div className={styles.blogListContainer} onClick={goPost}>
