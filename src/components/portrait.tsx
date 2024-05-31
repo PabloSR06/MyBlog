@@ -8,6 +8,7 @@ import {
     TwitterUrl
 } from "@data/constants.tsx";
 import {CupHotFill, Github, Linkedin, Twitter} from "react-bootstrap-icons";
+import {AltBuyMeACoffe, AltGithub, AltLinkedin, AltTwitter} from "@data/texts.ts";
 
 export default function Portrait() {
 
@@ -18,22 +19,22 @@ export default function Portrait() {
                 <div className={styles.socialsContainer}>
                     <ul className={styles.socialsUl}>
                         <li className={styles.linkSocial} >
-                            <a href={LinkedinUrl} target="_blank">
+                            <a href={LinkedinUrl} target="_blank" aria-label={AltLinkedin}>
                                 <Linkedin className={styles.iconSocial}/>
                             </a>
                         </li>
                         <li className={styles.linkSocial}>
-                            <a href={TwitterUrl} target="_blank">
+                            <a href={TwitterUrl} target="_blank" aria-label={AltTwitter}>
                                 <Twitter className={styles.iconSocial}/>
                             </a>
                         </li>
                         <li className={styles.linkSocial}>
-                            <a href={GithubUrl} target="_blank">
+                            <a href={GithubUrl} target="_blank" aria-label={AltGithub}>
                                 <Github className={styles.iconSocial}/>
                             </a>
                         </li>
                         <li className={styles.linkSocial}>
-                            <a href={BuyMeACoffeeUrl} target="_blank">
+                            <a href={BuyMeACoffeeUrl} target="_blank" aria-label={AltBuyMeACoffe}>
                                 <CupHotFill className={styles.iconSocial}/>
                             </a>
                         </li>

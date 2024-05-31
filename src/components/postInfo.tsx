@@ -27,7 +27,7 @@ export const PostInfo:React.FC<PostInfoProps> = ({post}) => {
 
             </Helmet>
             <div className={styles.postInfo}>
-            <h2 className={styles.postTitle}>{post.postInfo.title}</h2>
+                <h2 className={styles.postTitle}>{post.postInfo.title}</h2>
                 <p className={styles.postDate}>{post.postInfo.date}</p>
             </div>
             <div>

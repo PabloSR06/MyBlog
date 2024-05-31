@@ -12,7 +12,7 @@ export const PostBlock:React.FC<PostBlockProps> = ({ data }) => {
         window.location.href = `/post/${data.id}`;
     }
     return (
-            <div className={styles.blogListContainer} onClick={goPost}>
+            <div className={styles.blogListContainer} onClick={goPost} tabIndex={0} >
                 <h2 className={styles.blogListTitle}>{data.title}</h2>
                 <div className={styles.blogListInfo}>
                     <div className={styles.tagList}>
