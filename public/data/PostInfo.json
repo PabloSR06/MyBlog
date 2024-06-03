@@ -47,7 +47,7 @@
     "tags": [ "Github", "Blazor" ],
     "isExternal": false,
     "url": "",
-    "description": "Tutorial on how to publish Blazor applications on GitHub Pages for easy sharing and accessibility."
+    "description": "Tutorial on how to publish Blazor applications on GitHub Pages for easy sharing."
   },
   {
     "id": 6,
@@ -88,5 +88,15 @@
     "isExternal": false,
     "url": "",
     "description": "Learn how to containerize MySQL databases using Docker, along with integrating PhpMyAdmin for easy database management."
+  },
+  {
+    "id": 10,
+    "title": "Using Workflows to Deploy Your React App on GitHub Pages",
+    "fileName": "workflowReactGithubPages",
+    "date": "JUN 4, 2024",
+    "tags": [ "Github", "React", "Workflow" ],
+    "isExternal": false,
+    "url": "",
+    "description": "Tutorial on how to publish React applications on GitHub Pages for easy sharing using GitHub Workflows."
   }
 ]

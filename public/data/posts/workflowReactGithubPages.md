@@ -26,7 +26,7 @@ Before we start we need:
 - Github token with access to repository
 
 
-
+<br>
 
 ## How to generate Github token
 
@@ -38,15 +38,18 @@ But basically to generate a token you have to go to your profile settings, in th
 
 
 
+![Personal token](/data/posts/img/workflowReactGithubPages/image1.png)
 
 
 
 Returning to our repository, we must store the newly generated token as a repository secret. This step is crucial as it enables the token to be available for use in our workflows without exposing sensitive information. By saving the token as a secret, we can safely reference it in our continuous integration and deployment processes, maintaining security in our tasks.
 
 
+![Actions secrets](/data/posts/img/workflowReactGithubPages/image2.png)
 
 
 
+<br>
 
 ## Workflow
 
@@ -114,17 +117,19 @@ Let's explain what the jobs inside this workflow, the first job is in charge of 
 
 
 
-
+<br>
 
 ## Github Pages Configuration
 
 
 The combination of the two tasks created above will have published in a brand other than main/master, so we need to tell the page where are these files so it can be accessible with the URL. In the configuration of our repository we go to the Pages section and where the branches are we must make sure that the branch `gh-page` is set, since it is here where our workflow will put the files of the build of our project.
 
+<br>
 
+![Page settings](/data/posts/img/workflowReactGithubPages/image3.png)
 
+![Final result](/data/posts/img/workflowReactGithubPages/image4.png)
 
-
-
+<br>
 
 In conclusion, using the power and flexibility that GitHub gives us, not only we can generate a functional build of our project every time we publish to our main branch, or in the configured branches, but also allows us to have a perfect free page for our projects, just one last thing remember that if you need more of what Github Pages brings, you can replace the deploy task and configure another to be published elsewhere, such as Azure. With this done, you just have to enjoy :).
