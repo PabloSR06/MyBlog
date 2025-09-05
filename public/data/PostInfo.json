@@ -98,5 +98,15 @@
     "isExternal": false,
     "url": "",
     "description": "Tutorial on how to publish React applications on GitHub Pages for easy sharing using GitHub Workflows."
+  },
+  {
+    "id": 11,
+    "title": "Home Assistant in Docker: Common problems with your LAN devices",
+    "fileName": "homeAssistantDockerLAN",
+    "date": "JUN 4, 2024",
+    "tags": [ "Docker", "Home Assistant", "LAN" ],
+    "isExternal": true,
+    "url": "https://medium.com/@pablo.sromero/home-assistant-in-docker-common-problems-with-your-lan-devices-ff39bfb83d37",
+    "description": "Explore common issues and solutions for running Home Assistant in Docker on your local network."
   }
 ]
