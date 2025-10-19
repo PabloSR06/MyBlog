@@ -103,10 +103,21 @@
     "id": 11,
     "title": "Home Assistant in Docker: Common problems with your LAN devices",
     "fileName": "homeAssistantDockerLAN",
-    "date": "JUN 4, 2024",
+    "date": "SEP 5, 2025",
     "tags": [ "Docker", "Home Assistant", "LAN" ],
     "isExternal": true,
     "url": "https://medium.com/@pablo.sromero/home-assistant-in-docker-common-problems-with-your-lan-devices-ff39bfb83d37",
     "description": "Explore common issues and solutions for running Home Assistant in Docker on your local network."
+  },
+  {
+    "id": 12,
+    "title": "Automate your productivity: integrate Google Calendar with Claude using MCP",
+    "fileName": "integrateMcpGoogleCalendar",
+    "date": "OCT 20, 2025",
+    "tags": [ "MCP", "Google Calendar", "Integration" ],
+    "isExternal": false,
+    "url": "",
+    "description": "Explore integration of LLM with Google Calendar for improved productivity."
   }
+
 ]
