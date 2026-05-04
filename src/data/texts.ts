@@ -1,7 +1,8 @@
-export const AltLinkedin = "Linkedin link for Pablo Suarez";
-export const AltTwitter = "Twitter link for Pablo Suarez";
-export const AltGithub = "Github link for Pablo Suarez";
-export const AltBuyMeACoffe = "Buy Me A Coffe link for Pablo Suarez";
-export const AltHome = "Go to Home Page";
+export { Name } from "@data/constants.tsx";
 
-export const Name = "Pablo Suarez Romero";
+export const AltLinkedin = "Pablo Suárez on LinkedIn";
+export const AltTwitter = "Pablo Suárez on Twitter";
+export const AltGithub = "Pablo Suárez on GitHub";
+export const AltBuyMeACoffee = "Buy Pablo Suárez a coffee";
+export const AltHome = "Go to home page";
+

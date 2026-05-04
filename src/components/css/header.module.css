@@ -1,6 +1,7 @@
 .headerContainer {
     margin: 20px 0;
 }
+
 .headerSocials {
     display: flex;
     justify-content: center;
@@ -10,13 +11,29 @@
     padding: 0;
     margin: 0;
 }
+
 .headerLinkSocial {
     display: block;
     width: 25px;
     height: 25px;
     text-decoration: none;
     color: black;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
 }
+
+.headerLinkSocial:hover,
+.headerLinkSocial:focus {
+    outline: 2px solid #0071c1;
+    transform: scale(1.1);
+}
+
+.headerLinkSocial:focus-visible {
+    outline: 2px solid #0071c1;
+}
+
 .headerIconSocial {
     display: block;
     width: 100%;
@@ -24,6 +41,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .headerIconSocial:before {
     content: "";
     display: block;

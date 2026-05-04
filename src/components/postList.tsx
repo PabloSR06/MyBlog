@@ -1,26 +1,30 @@
 import styles from "@css/postList.module.css";
-import {useEffect, useState} from "react";
-import {getPost} from "@data/requests.ts";
-import {PostModel} from "@data/models.ts";
-import {PostBlock} from "@components/postBlock.tsx";
+import { useEffect, useState } from "react";
+import { getPost } from "@data/requests.ts";
+import { PostModel } from "@data/models.ts";
+import { PostBlock } from "@components/postBlock.tsx";
 
 export default function PostList() {
 
     const [posts, setPosts] = useState<PostModel[]>([]);
 
     useEffect(() => {
-        getPost().then(r => setPosts(r));
+        let cancelled = false;
+        getPost().then((data) => {
+            if (cancelled) return;
+            const sorted = [...data].sort((a, b) => b.id - a.id);
+            setPosts(sorted);
+        });
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
-
     return (
-        <div className={styles.blogGrid}>
-            {posts.reverse().map((post, index) => {
-
-                return (
-                    <PostBlock data={post} key={index}/>
-                )
-            })}
-        </div>
+        <section className={styles.blogGrid} aria-label="Blog posts">
+            {posts.map((post) => (
+                <PostBlock data={post} key={post.id} />
+            ))}
+        </section>
     );
 }

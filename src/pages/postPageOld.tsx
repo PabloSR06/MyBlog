@@ -1,49 +1,59 @@
 import Header from "@components/header.tsx";
-import {PostInfo} from "@components/postInfo.tsx";
-import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {ItemModel} from "@data/models.ts";
-import {getPostByName} from "@data/requests.ts";
-import {Loader} from "@components/loader.tsx";
+import { PostInfo } from "@components/postInfo.tsx";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { ItemModel } from "@data/models.ts";
+import { getPostByName } from "@data/requests.ts";
+import { Loader } from "@components/loader.tsx";
 
-export default  function PostPageOld() {
+export default function PostPageOld() {
 
     const { fileName } = useParams();
+    const navigate = useNavigate();
 
-    const [post, setPost] = useState<ItemModel>({} as ItemModel);
+    const [post, setPost] = useState<ItemModel | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            const data = await getPostByName(fileName || "");
+        let cancelled = false;
 
-            if(data === undefined){
-                window.location.href = '/404';
-            }else{
-                setPost(data);
-            }
+        if (!fileName) {
+            navigate('/404', { replace: true });
+            return;
         }
 
-        fetchData().then(() => setLoading(false));
-    }, [fileName]);
+        setLoading(true);
+        getPostByName(fileName)
+            .then((data) => {
+                if (cancelled) return;
+                if (!data || !data.postInfo) {
+                    navigate('/404', { replace: true });
+                    return;
+                }
+                if (data.postInfo.isExternal && data.postInfo.url) {
+                    window.location.replace(data.postInfo.url);
+                    return;
+                }
+                setPost(data);
+            })
+            .finally(() => {
+                if (!cancelled) setLoading(false);
+            });
 
-    if(loading){
-        return <Loader/>
-    }else if (!post.postInfo) {
-        window.location.href = '/404';
-        //return <NotFoundPage/>;
-    }else if(post.postInfo.isExternal){
-        window.location.href = post.postInfo.url;
+        return () => {
+            cancelled = true;
+        };
+    }, [fileName, navigate]);
+
+    if (loading || !post) {
+        return <Loader />;
     }
 
     return (
         <>
-            <Header/>
-            <PostInfo post={post}/>
-
+            <Header />
+            <PostInfo post={post} />
         </>
     );
-
 }
 

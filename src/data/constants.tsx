@@ -5,4 +5,3 @@ export const GithubUrl = "https://github.com/PabloSR06";
 export const PictureUrl = "https://avatars.githubusercontent.com/u/47283527?v=4";
 export const BuyMeACoffeeUrl = "https://www.buymeacoffee.com/PabloSR";
 
-
