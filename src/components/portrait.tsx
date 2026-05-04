@@ -5,10 +5,9 @@ import {
     LinkedinUrl,
     Name,
     PictureUrl,
-    TwitterUrl,
 } from "@data/constants.tsx";
-import { CupHotFill, Github, Linkedin, Twitter } from "react-bootstrap-icons";
-import { AltBuyMeACoffee, AltGithub, AltLinkedin, AltTwitter } from "@data/texts.ts";
+import { CupHotFill, Github, Linkedin } from "react-bootstrap-icons";
+import { AltBuyMeACoffee, AltGithub, AltLinkedin } from "@data/texts.ts";
 
 const externalLinkProps = {
     target: "_blank",

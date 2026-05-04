@@ -1,7 +1,7 @@
 import Header from "@components/header.tsx";
-import { PostInfo } from "@components/postInfo.tsx";
+import { Suspense, lazy, useEffect, useState } from "react";
+const PostInfo = lazy(() => import("@components/postInfo.tsx").then((m) => ({ default: m.PostInfo })));
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { ItemModel } from "@data/models.ts";
 import { getPostById } from "@data/requests.ts";
 import { Loader } from "@components/loader.tsx";
@@ -53,7 +53,9 @@ export default function PostPage() {
     return (
         <>
             <Header />
-            <PostInfo post={post} />
+            <Suspense fallback={<Loader />}>
+                <PostInfo post={post} />
+            </Suspense>
         </>
     );
 }

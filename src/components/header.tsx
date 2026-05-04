@@ -1,7 +1,7 @@
 import styles from "@css/header.module.css";
-import { BuyMeACoffeeUrl, GithubUrl, LinkedinUrl, TwitterUrl } from "@data/constants.tsx";
-import { CupHotFill, Github, House, Linkedin, Twitter } from "react-bootstrap-icons";
-import { AltBuyMeACoffee, AltGithub, AltHome, AltLinkedin, AltTwitter } from "@data/texts.ts";
+import { BuyMeACoffeeUrl, GithubUrl, LinkedinUrl } from "@data/constants.tsx";
+import { CupHotFill, Github, House, Linkedin } from "react-bootstrap-icons";
+import { AltBuyMeACoffee, AltGithub, AltHome, AltLinkedin } from "@data/texts.ts";
 
 const externalLinkProps = {
     target: "_blank",
